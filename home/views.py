@@ -1,8 +1,17 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def home(request):
     print('home')
-    return HttpResponse("home do app1")
+
+    context = {
+        'texto' : 'home modificado pelo context',
+        'titulo' : 'Site django - '
+    }
+
+    return render(
+        request,
+        'home/index.html',
+        context
+    )
 
 # Create your views here.
