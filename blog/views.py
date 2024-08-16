@@ -1,14 +1,19 @@
 from django.shortcuts import render
+from blog.data import post
 
 def blog(request):
     print('home')
+
     context = {
-        'texto' : 'blog modificado pelo context'
+        'texto' : 'blog modificado pelo context',
+        'posts' : post
     }
     return render(
         request,
         'blog/index.html',
-        context
+        context,
+
+
     )
 
 
