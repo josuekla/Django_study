@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from blog.data import post
+from blog.data import posts
 
 def blog(request):
-    print('home')
+    print('blog')
 
     context = {
         'texto' : 'blog modificado pelo context',
-        'posts' : post
+        'posts' : posts
     }
     return render(
         request,
@@ -24,10 +24,20 @@ def example(request):
         'texto' : 'example modificado pelo context'
     }
 
-    return render(
-        request,
-        'blog/example.html',
-        context
-    )
+
 
 # Create your views here.
+def post(request, id):
+    print("post", id)
+
+    context = {
+        'texto' : 'blog modificado pelo context',
+        'posts' : posts
+    }
+    return render(
+        request,
+        'blog/index.html',
+        context,
+
+
+    )
