@@ -2,8 +2,9 @@
 {% include "global/partials/menu.html" %}
 
 {% if texto %}
-<h2>{% block texto %}Texto base{% endblock texto %}</h2>
+<h2 class="texto_titulo">{% block texto %}Texto base{% endblock texto %}</h2>
 {% endif %}
+<hr>
 <main class="content">
     {% block post %}{% endblock post %}
     {% block home %}{% endblock home %}

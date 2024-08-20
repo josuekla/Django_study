@@ -1,0 +1,18 @@
+{% extends "global/base.html" %}
+
+{% block texto %} {{texto}} {% endblock texto %}
+
+{% block post %}
+    <article class="post single-post">
+        <header>
+            <a href="{% url "blog:post" post.id %}"> {% comment %} NOME DA URL MAIS O NOME DO LINK (...:...){% endcomment %}
+                <h1 class="post__title">
+                    {{  post.title  }}
+                </h1>
+            </a>
+        </header>
+        <div class="post__body">
+            {{  post.body  }}
+        </div>
+    </article>
+{% endblock post %}
